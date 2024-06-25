@@ -1,0 +1,67 @@
+/* >> RESET */
+    *,
+    *::after,
+    *::before   {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+/*  */
+
+
+/* >> GENERAL STYLE */
+    html    {
+        scroll-behavior: smooth;
+    }
+/*  */
+
+
+/* >> HEADER */
+    .header {
+        width: 100%;
+        height: 60px;
+
+        display: grid;
+        place-content: center;
+    }
+
+
+/* >> CONTAINER */
+    .container  {
+        height: 100vh;
+        width: 100%;
+    }
+/* > Game Container */
+    .game-container {
+        height: 100vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #player {
+        height: 70px;
+        width: 70px;
+        border-radius: 16px;
+        border: none;
+        outline: none;
+        background-color: grey;
+    }
+/* > Tac Toe */
+    .tac-toe    {
+
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    button  {
+        height: 100px;
+        width: 100px;
+        border: 0.1px solid black;
+        outline: none;
+    }
