@@ -43,6 +43,9 @@
     }
 
     #player {
+        text-align: center;
+        font-weight: bolder;
+        font-size: 30px;
         height: 70px;
         width: 70px;
         border-radius: 16px;
