@@ -186,6 +186,8 @@ function checkWinner(){
     gameBoard = [firstRow, secondRow, thirdRow];
     console.log(gameBoard)
 
-
+    if(gameBoard[0][0] === "X" && gameBoard[0][1] === "X" && gameBoard[0][2] === "X" &&){
+        alert("Player X wins!!!")
+    };
 
 };
