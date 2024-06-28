@@ -180,9 +180,15 @@ function checkWinner(){
 
     console.log(gameBoard)
 
+<<<<<<< HEAD
     if(gameBoard[0][0] === "X" && gameBoard[0][1] === "X" && gameBoard[0][2] === "X"){
         alert("Player X wins!!!")
     };
     
+=======
+    if(gameBoard[0][0] === "X" && gameBoard[0][1] === "X" && gameBoard[0][2] === "X" &&){
+        alert("Player X wins!!!")
+    };
+>>>>>>> e59589143e14c09516da7451e0a6250f914ac6b4
 
 };
