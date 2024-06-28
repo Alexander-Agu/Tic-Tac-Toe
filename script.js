@@ -29,21 +29,20 @@ let thirdRow = [0,1,2];
 
 
 // Handles the click event for the first row
+
 function boardOne(){
-    buttonOneClicked = true;
     value = player.value;
     if(value === 'x'){
         buttonOne.textContent = "X";
         player.value = "o"
         firstRow.splice(0,1, "X")
-        buttonOne.onclick = null;
     }
     else if(value === 'o'){
         buttonOne.textContent = "O";
         player.value = "x"
         firstRow.splice(0,1, "O")
-        buttonOne.onclick = null;
     }
+    buttonOne.onclick = null;
     return firstRow
 };
 function boardTwo(){
@@ -52,14 +51,13 @@ function boardTwo(){
         buttonTwo.textContent = "X";
         player.value = "o"
         firstRow.splice(1,1, "X")
-        buttonTwo.onclick = null;
     }
     else if(value === 'o'){
         buttonTwo.textContent = "O";
         player.value = "x"
         firstRow.splice(1,1, "O")
-        buttonTwo.onclick = null;
     }
+    buttonTwo.onclick = null;
     return firstRow
 };
 function boardThree(){
@@ -68,7 +66,6 @@ function boardThree(){
         buttonThree.textContent = "X";
         player.value = "o"
         firstRow.splice(2,1, "X")
-        buttonThree.onclick = null;
     }
     else if(value === 'o'){
         buttonThree.textContent = "O";
@@ -76,6 +73,7 @@ function boardThree(){
         firstRow.splice(2,1, "O")
         buttonThree.onclick = null;
     }
+    buttonThree.onclick = null;
     return firstRow
 };
 
@@ -86,14 +84,13 @@ function boardFour(){
         buttonFour.textContent = "X";
         player.value = "o"
         secondRow.splice(0,1, "X")
-        buttonFour.onclick = null;
     }
     else if(value === 'o'){
         buttonFour.textContent = "O";
         player.value = "x"
         secondRow.splice(0,1, "O")
-        buttonFour.onclick = null;
     }
+    buttonFour.onclick = null;
     return secondRow
 };
 function boardFive(){
@@ -102,14 +99,13 @@ function boardFive(){
         buttonFive.textContent = "X";
         player.value = "o"
         secondRow.splice(1,1, "X")
-        buttonFive.onclick = null;
     }
     else if(value === 'o'){
         buttonFive.textContent = "O";
         player.value = "x"
         secondRow.splice(1,1, "O")
-        buttonFive.onclick = null;
     }
+    buttonFive.onclick = null;
     return secondRow
 };
 function boardSix(){
@@ -118,14 +114,13 @@ function boardSix(){
         buttonSix.textContent = "X";
         player.value = "o"
         secondRow.splice(2,1, "X")
-        buttonSix.onclick = null;
     }
     else if(value === 'o'){
         buttonSix.textContent = "O";
         player.value = "x"
         secondRow.splice(2,1, "O")
-        buttonSix.onclick = null;
     }
+    buttonSix.onclick = null;
     return secondRow
 };
 
@@ -136,14 +131,13 @@ function boardSeven(){
         buttonSeven.textContent = "X";
         player.value = "o"
         thirdRow.splice(0,1, "X")
-        buttonSeven.onclick = null;
     }
     else if(value === 'o'){
         buttonSeven.textContent = "O";
         player.value = "x"
         thirdRow.splice(0,1, "O")
-        buttonSeven.onclick = null;
     }
+    buttonSeven.onclick = null;
     return thirdRow
 };
 function boardAight(){
@@ -152,14 +146,13 @@ function boardAight(){
         buttonAight.textContent = "X";
         player.value = "o"
         thirdRow.splice(1,1, "X")
-        buttonAight.onclick = null;
     }
     else if(value === 'o'){
         buttonAight.textContent = "O";
         player.value = "x"
         thirdRow.splice(1,1, "O")
-        buttonAight.onclick = null;
     }
+    buttonAight.onclick = null;
     return thirdRow
 };
 function boardNine(){
@@ -168,24 +161,28 @@ function boardNine(){
         buttonNine.textContent = "X";
         player.value = "o"
         thirdRow.splice(2,1, "X")
-        buttonNine.onclick = null;
     }
     else if(value === 'o'){
         buttonNine.textContent = "O";
         player.value = "x"
         thirdRow.splice(2,1, "O")
-        buttonNine.onclick = null;
     }
+    buttonNine.onclick = null;
     return thirdRow
 };
 
 function checkWinner(){
-    firstRow = [boardOne()];
-    secondRow = [boardFour()];
-    thirdRow = [boardSeven()];
+    firstRow= [buttonOne.textContent, buttonTwo.textContent, buttonThree.textContent];
+    secondRow = [buttonFour.textContent, buttonFive.textContent, buttonSix.textContent];
+    thirdRow = [buttonSeven.textContent, buttonAight.textContent, buttonNine.textContent];
+
     gameBoard = [firstRow, secondRow, thirdRow];
+
     console.log(gameBoard)
 
-
+    if(gameBoard[0][0] === "X" && gameBoard[0][1] === "X" && gameBoard[0][2] === "X"){
+        alert("Player X wins!!!")
+    };
+    
 
 };
