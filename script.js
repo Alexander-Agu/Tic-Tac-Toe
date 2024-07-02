@@ -29,7 +29,6 @@ let thirdRow = [0,1,2];
 
 
 // Handles the click event for the first row
-
 function boardOne(){
     value = player.value;
     if(value === 'x'){
@@ -43,8 +42,8 @@ function boardOne(){
         firstRow.splice(0,1, "O")
     }
     buttonOne.onclick = null;
-    checkWinner();
-    return firstRow;
+    getBoard();
+    return buttonOne.textContent;
 
 };
 function boardTwo(){
@@ -60,8 +59,8 @@ function boardTwo(){
         firstRow.splice(1,1, "O")
     }
     buttonTwo.onclick = null;
-    checkWinner();
-    return firstRow;
+    getBoard();
+    return buttonTwo.textContent;
 };
 function boardThree(){
     value = player.value;
@@ -77,8 +76,8 @@ function boardThree(){
         buttonThree.onclick = null;
     }
     buttonThree.onclick = null;
-    checkWinner();
-    return firstRow;
+    getBoard();
+    return buttonThree.textContent;
 };
 
 // Handles click event for the second row
@@ -95,8 +94,8 @@ function boardFour(){
         secondRow.splice(0,1, "O")
     }
     buttonFour.onclick = null;
-    checkWinner();
-    return secondRow;
+    getBoard();
+    return buttonFour.textContent;
 };
 function boardFive(){
     value = player.value;
@@ -111,8 +110,8 @@ function boardFive(){
         secondRow.splice(1,1, "O")
     }
     buttonFive.onclick = null;
-    checkWinner();
-    return secondRow;
+    getBoard();
+    return buttonFive.textContent;
 };
 function boardSix(){
     value = player.value;
@@ -127,8 +126,8 @@ function boardSix(){
         secondRow.splice(2,1, "O")
     }
     buttonSix.onclick = null;
-    checkWinner();
-    return secondRow;
+    getBoard();
+    return buttonSix.textContent;
 };
 
 // Handles click Event for the third row
@@ -145,8 +144,8 @@ function boardSeven(){
         thirdRow.splice(0,1, "O")
     }
     buttonSeven.onclick = null;
-    checkWinner();
-    return thirdRow;
+    getBoard();
+    return buttonSeven.textContent;
 };
 function boardAight(){
     value = player.value;
@@ -161,8 +160,8 @@ function boardAight(){
         thirdRow.splice(1,1, "O")
     }
     buttonAight.onclick = null;
-    checkWinner();
-    return thirdRow;
+    getBoard();
+    return buttonAight.textContent;
 };
 function boardNine(){
     value = player.value;
@@ -177,8 +176,8 @@ function boardNine(){
         thirdRow.splice(2,1, "O")
     }
     buttonNine.onclick = null;
-    checkWinner();
-    return thirdRow;
+    getBoard();
+    return buttonNine.textContent;
 };
 
 // Creates the board
@@ -186,77 +185,80 @@ function getBoard(){
     firstRow= [buttonOne.textContent, buttonTwo.textContent, buttonThree.textContent];
     secondRow = [buttonFour.textContent, buttonFive.textContent, buttonSix.textContent];
     thirdRow = [buttonSeven.textContent, buttonAight.textContent, buttonNine.textContent];
+
     
     gameBoard = [firstRow, secondRow, thirdRow];
     
     console.log(gameBoard)
+
+    checkWinner(gameBoard)
 };
 
+
 // Checks wich player won the game
-function checkWinner(){
+function checkWinner(winner){
     // calls the board so we can check the winner
-    getBoard()
 
     // Checks the winner for X - axis
-    if(gameBoard[0][0] === "X" && gameBoard[0][1] === "X" && gameBoard[0][2] === "X"){  // Checks if X won in the first row
+    if(winner[0][0] === "X" && winner[0][1] === "X" && winner[0][2] === "X"){  // Checks if X won in the first row
         alert("Player X wins!!!")
     }
-    else if(gameBoard[0][0] === "O" && gameBoard[0][1] === "O" && gameBoard[0][2] === "O"){ // Checks if O won in the first row
+    else if(winner[0][0] === "O" && winner[0][1] === "O" && winner[0][2] === "O"){ // Checks if O won in the first row
         alert("Player O wins!!!")
     }
-    else if(gameBoard[1][0] === "X" && gameBoard[1][1] === "X" && gameBoard[1][2] === "X"){ // Checks if X won in the Second row
+    else if(winner[1][0] === "X" && winner[1][1] === "X" && winner[1][2] === "X"){ // Checks if X won in the Second row
         alert("Player X wins!!!")
     }
-    else if(gameBoard[1][0] === "O" && gameBoard[1][1] === "O" && gameBoard[1][2] === "O"){ // Checks if O won in the Second row
+    else if(winner[1][0] === "O" && winner[1][1] === "O" && winner[1][2] === "O"){ // Checks if O won in the Second row
         alert("Player O wins!!!")
     }
-    else if(gameBoard[2][0] === "X" && gameBoard[2][1] === "X" && gameBoard[2][2] === "X"){ // Checks if X won in the Third row
+    else if(winner[2][0] === "X" && winner[2][1] === "X" && winner[2][2] === "X"){ // Checks if X won in the Third row
         alert("Player X wins!!!")
     }
-    else if(gameBoard[2][0] === "O" && gameBoard[2][1] === "O" && gameBoard[2][2] === "O"){ // Checks if O won in the Third row
+    else if(winner[2][0] === "O" && winner[2][1] === "O" && winner[2][2] === "O"){ // Checks if O won in the Third row
         alert("Player O wins!!!")
     }
 
     // Checks the winner for the Y - axis
-    else if(gameBoard[0][0] === "X" && gameBoard[1][0] === "X" && gameBoard[2][0] === "X"){ // Checks if X won in the first row
+    else if(winner[0][0] === "X" && winner[1][0] === "X" && winner[2][0] === "X"){ // Checks if X won in the first row
         alert("Player X wins!!!")
     }
-    else if(gameBoard[0][0] === "O" && gameBoard[1][0] === "O" && gameBoard[2][0] === "O"){ // Checks if O won in the first row
+    else if(winner[0][0] === "O" && winner[1][0] === "O" && winner[2][0] === "O"){ // Checks if O won in the first row
         alert("Player O wins!!!")
     }
-    else if(gameBoard[0][1] === "X" && gameBoard[1][1] === "X" && gameBoard[2][1] === "X"){ // Checks if X won in the Second row
+    else if(winner[0][1] === "X" && winner[1][1] === "X" && winner[2][1] === "X"){ // Checks if X won in the Second row
         alert("Player X wins!!!")
     }
-    else if(gameBoard[0][1] === "O" && gameBoard[1][1] === "O" && gameBoard[2][1] === "O"){ // Checks if O won in the Second row
+    else if(winner[0][1] === "O" && winner[1][1] === "O" && winner[2][1] === "O"){ // Checks if O won in the Second row
         alert("Player O wins!!!")
     }
-    else if(gameBoard[0][2] === "X" && gameBoard[1][2] === "X" && gameBoard[2][2] === "X"){ // Checks if X won in the Third row
+    else if(winner[0][2] === "X" && winner[1][2] === "X" && winner[2][2] === "X"){ // Checks if X won in the Third row
         alert("Player X wins!!!")
     }
-    else if(gameBoard[0][2] === "O" && gameBoard[1][2] === "O" && gameBoard[2][2] === "O"){ // Checks if O won in the Third row
+    else if(winner[0][2] === "O" && winner[1][2] === "O" && winner[2][2] === "O"){ // Checks if O won in the Third row
         alert("Player O wins!!!")
     }
 
     // Checks the winner for Cross Axis
-    else if(gameBoard[0][0] === "X" && gameBoard[1][1] === "X" && gameBoard[2][2] === "X"){ // Checks if X won in the left cross axis
+    else if(winner[0][0] === "X" && winner[1][1] === "X" && winner[2][2] === "X"){ // Checks if X won in the left cross axis
         alert("Player X wins!!!")
     }
-    else if(gameBoard[0][0] === "O" && gameBoard[1][1] === "O" && gameBoard[2][2] === "O"){ // Checks if O won in the left cross axis
+    else if(winner[0][0] === "O" && winner[1][1] === "O" && winner[2][2] === "O"){ // Checks if O won in the left cross axis
         alert("Player O wins!!!")
     }
-    else if(gameBoard[0][2] === "X" && gameBoard[1][1] === "X" && gameBoard[2][0] === "X"){ // Checks if X won in the right cross axis
+    else if(winner[0][2] === "X" && winner[1][1] === "X" && winner[2][0] === "X"){ // Checks if X won in the right cross axis
         alert("Player X wins!!!")
     }
-    else if(gameBoard[0][2] === "O" && gameBoard[1][1] === "O" && gameBoard[2][0] === "O"){ // Checks if O won in the right cross axis
+    else if(winner[0][2] === "O" && winner[1][1] === "O" && winner[2][0] === "O"){ // Checks if O won in the right cross axis
         alert("Player O wins!!!")
     }
 
     // checks if its a TIE!!
-/*     else{
-        alert("Its a tie")
-    } */
+    else{
+        alert('Its a tie')
+    }
 }
 
 function resetGame(){
 
-}   
+}    
